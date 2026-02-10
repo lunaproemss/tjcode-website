@@ -1,0 +1,401 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJ CODE | Веб-разработка и дизайн</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Шапка */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-section {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #2d3436;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+            .logo i {
+                color: #6c5ce7;
+            }
+
+        .tagline {
+            font-size: 12px;
+            color: #6c5ce7;
+            font-weight: 500;
+            margin-top: -5px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+            .nav-links a {
+                text-decoration: none;
+                color: #636e72;
+                font-weight: 500;
+                transition: color 0.3s;
+                font-size: 17px;
+            }
+
+                .nav-links a:hover {
+                    color: #6c5ce7;
+                }
+
+        .cta-button {
+            background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            font-size: 16px;
+        }
+
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(108, 92, 231, 0.3);
+            }
+
+        /* Герой-секция */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 3.5rem;
+                font-weight: 700;
+                color: #2d3436;
+                margin-bottom: 20px;
+                line-height: 1.2;
+            }
+
+            .hero p {
+                font-size: 1.25rem;
+                color: #636e72;
+                max-width: 700px;
+                margin: 0 auto 40px;
+            }
+
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            border-radius: 20px;
+            margin: 50px auto;
+            box-shadow: 0 20px 40px rgba(108, 92, 231, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        /* Карточки */
+        .features {
+            padding: 80px 0;
+            background: white;
+            border-radius: 30px 30px 0 0;
+            margin-top: -30px;
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #2d3436;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.4s, box-shadow 0.4s;
+            text-align: center;
+            border: 1px solid #f1f2f6;
+        }
+
+            .card:hover {
+                transform: translateY(-15px);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            }
+
+            .card i {
+                font-size: 50px;
+                color: #6c5ce7;
+                margin-bottom: 25px;
+            }
+
+            .card h3 {
+                font-family: 'Poppins', sans-serif;
+                font-size: 1.8rem;
+                margin-bottom: 15px;
+                color: #2d3436;
+            }
+
+            .card p {
+                color: #636e72;
+                font-size: 1rem;
+            }
+
+        /* Подвал */
+        footer {
+            background: #2d3436;
+            color: #fff;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+            .social-links a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                color: white;
+                font-size: 20px;
+                transition: background 0.3s, transform 0.3s;
+            }
+
+                .social-links a:hover {
+                    background: #6c5ce7;
+                    transform: scale(1.1);
+                }
+
+        .copyright {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #b2bec3;
+            font-size: 0.9rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-section">
+                    <a href="#" class="logo">
+                        <i class="fas fa-code"></i> TJ CODE
+                    </a>
+                    <span class="tagline">Веб-разработка и дизайн</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home"><i class="fas fa-home"></i> Главная</a></li>
+                    <li><a href="#projects"><i class="fas fa-briefcase"></i> Проекты</a></li>
+                    <li><a href="#about"><i class="fas fa-user"></i> Обо мне</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Контакты</a></li>
+                </ul>
+                <button class="cta-button" id="contactBtn">
+                    <i class="fas fa-paper-plane"></i> Написать в Telegram
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Создаём цифровые впечатления</h1>
+            <p>Профессиональная веб-разработка, современный дизайн и безупречная функциональность. Превращаем идеи в цифровую реальность.</p>
+            <button class="cta-button" style="padding: 15px 40px; font-size: 18px;" id="projectBtn">
+                Начать проект <i class="fas fa-arrow-right"></i>
+            </button>
+            <div class="hero-image">
+                <div>
+                    <i class="fas fa-laptop-code" style="font-size: 60px; margin-bottom: 20px;"></i>
+                    <p>Интерактивный прототип вашего будущего сайта</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Особенности -->
+    <section class="features" id="about">
+        <div class="container">
+            <h2 class="section-title">Что мы предлагаем</h2>
+            <div class="cards">
+                <div class="card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Современный дизайн</h3>
+                    <p>Адаптивные интерфейсы, отвечающие последним трендам UI/UX. Красота и удобство в каждом пикселе.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Высокая скорость</h3>
+                    <p>Оптимизированная загрузка, быстрый отклик и плавная анимация. Ваши пользователи оценят.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Безопасность</h3>
+                    <p>Защита данных, SSL-сертификаты и регулярные обновления. Ваш сайт — в надёжных руках.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer id="contact">
+        <div class="container">
+            <h2 style="font-family: 'Poppins'; font-size: 2rem;">Давайте работать вместе</h2>
+            <p style="max-width: 600px; margin: 20px auto; color: #dfe6e9;">Готовы создать что-то уникальное? Свяжитесь со мной любым удобным способом.</p>
+
+            <div class="social-links">
+                <a href="https://t.me/tj_codee" target="_blank" title="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="https://www.instagram.com/tj_codee" target="_blank" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.youtube.com/@tj_codee" target="_blank" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="mailto:tjcodee.ru" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+
+            <div class="copyright">
+                &copy; 2023 TJ CODE. Все права защищены. | Сделано с <i class="fas fa-heart" style="color: #e84393;"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Кнопка "Написать в Telegram"
+        document.getElementById('contactBtn').addEventListener('click', function () {
+            window.open('https://t.me/tj_codee', '_blank');
+        });
+
+        // Кнопка "Начать проект"
+        document.getElementById('projectBtn').addEventListener('click', function () {
+            window.open('https://t.me/tj_codee', '_blank');
+        });
+
+        // Плавный скролл для навигации
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Эффект печатающего текста
+        const heroTitle = document.querySelector('.hero h1');
+        const originalText = "Создаём цифровые впечатления";
+        heroTitle.innerHTML = '';
+        let i = 0;
+        function typeWriter() {
+            if (i < originalText.length) {
+                heroTitle.innerHTML += originalText.charAt(i);
+                i++;
+                setTimeout(typeWriter, 50);
+            }
+        }
+        setTimeout(typeWriter, 500);
+    </script>
+</body>
+</html>
